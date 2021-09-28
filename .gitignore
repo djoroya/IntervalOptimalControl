@@ -1,0 +1,8 @@
+src/dependences/*
+.DS_Store
+*.asv
+*.synctex.gz
+*.log
+*.fls
+*.fdb_latexmk
+*.aux

@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+\author{Deyviss Jesús Oroya-Villalta}
+\title{Simulaciones de control óptimo en un intervalo}
+\begin{document}
+    \maketitle
+\begin{gather}
+    \min_{u \in \mathbb{R}} \int_0^T 
+    \Bigg( \max\Big(\frac 1 2,\|x(t) - x_T\|^2\Big) + \epsilon \| u(t)\|^2 \Bigg)
+    dt \\ 
+    \notag \text{Subject to:}
+    \begin{cases}
+        \dot{x}(t) = Ax+Bu \\
+        x(0) = x_0
+    \end{cases}
+\end{gather}
+Donde $A \in \mathcal{M}_{2\times 2}(\mathbb{R})$ y $B \in \mathbb{R}^2$
+\newline
+
+Para las simulaciones se ha aproximado las función $\max$ de la siguiente manera:
+\begin{gather}
+    \max(v,w) \approx \mathcal{T}_\delta(v,w)   \ \text{with } \delta \to 0 \\
+    \mathcal{T}_\delta(v,w) = \frac{1}{2}(v+w + \mathcal{G}_\delta(v-w)) \\
+    \mathcal{G}_\delta(z) = \sqrt{z^2 + \delta}\ \text{with } \delta \to 0
+\end{gather}
+
+\end{document}
